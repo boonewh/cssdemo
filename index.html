@@ -37,11 +37,16 @@
 
   <body class="font-body text-white bg-charcoal">
     <!-- ✅ Sticky Navbar -->
-    <header class="sticky top-0 z-20 bg-primary/90 backdrop-blur-sm">
-      <nav class="flex justify-between items-center px-6 lg:px-12 py-4 backdrop-blur-sm bg-white/10">
-        <div class="text-lg font-heading font-semibold text-white">CSS Family Therapy</div>
+    <header class="sticky top-0 z-20 bg-white shadow-sm">
+      <nav class="flex justify-between items-center px-6 lg:px-12 py-4">
+        <!-- Logo -->
+        <div class="text-lg font-heading font-semibold text-primary">
+          CSS Family Therapy
+        </div>
+
+        <!-- Nav Links -->
         <div class="flex items-center space-x-6">
-          <ul class="hidden md:flex space-x-6 text-white font-body">
+          <ul class="hidden md:flex space-x-6 text-primary font-body">
             <li><a href="#about" class="hover:underline">About</a></li>
             <li><a href="#services" class="hover:underline">Services</a></li>
             <li><a href="#who" class="hover:underline">Who We Serve</a></li>
@@ -50,12 +55,15 @@
             <li><a href="#login" class="hover:underline">Login</a></li>
             <li><a href="#cart" class="hover:underline">Cart</a></li>
           </ul>
-          <button class="bg-white text-black px-4 py-2 rounded-full text-sm font-heading font-bold uppercase">
+
+          <!-- Book Now Button -->
+          <button class="bg-primary text-white px-4 py-2 rounded-full text-sm font-heading font-bold uppercase">
             Book now
           </button>
         </div>
       </nav>
     </header>
+
 
     <!-- ✅ Hero Section -->
     <section class="relative h-screen w-full overflow-hidden">
