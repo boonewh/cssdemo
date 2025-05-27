@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
 
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       window.tailwind = {
@@ -35,39 +36,37 @@
   </head>
 
   <body class="font-body text-white bg-charcoal">
-    <!-- HERO SECTION -->
+    <!-- ✅ Sticky Navbar -->
+    <header class="sticky top-0 z-20">
+      <nav class="flex justify-between items-center px-6 lg:px-12 py-4 backdrop-blur-sm bg-white/10">
+        <div class="text-lg font-heading font-semibold text-white">CSS Family Therapy</div>
+        <div class="flex items-center space-x-6">
+          <ul class="hidden md:flex space-x-6 text-white font-body">
+            <li><a href="#about" class="hover:underline">About</a></li>
+            <li><a href="#services" class="hover:underline">Services</a></li>
+            <li><a href="#who" class="hover:underline">Who We Serve</a></li>
+            <li><a href="#course" class="hover:underline">Course</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
+            <li><a href="#login" class="hover:underline">Login</a></li>
+            <li><a href="#cart" class="hover:underline">Cart</a></li>
+          </ul>
+          <button class="bg-white text-black px-4 py-2 rounded-full text-sm font-heading font-bold uppercase">
+            Book now
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ✅ Hero Section -->
     <section class="relative h-screen w-full overflow-hidden">
-      <!-- Background Image -->
       <img
         src="images/css-staff-23.jpg"
         alt="Hero"
         class="absolute top-0 left-0 w-full h-full object-cover z-0"
       />
-      <!-- Overlay -->
       <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
 
-      <!-- Navbar -->
-      <header class="sticky top-0 z-20">
-        <nav class="flex justify-between items-center px-6 lg:px-12 py-4 backdrop-blur-sm bg-white/10">
-          <div class="text-lg font-heading font-semibold text-white">CSS Family Therapy</div>
-          <div class="flex items-center space-x-6">
-            <ul class="hidden md:flex space-x-6 text-white font-body">
-              <li><a href="#about" class="hover:underline">About</a></li>
-              <li><a href="#services" class="hover:underline">Services</a></li>
-              <li><a href="#who" class="hover:underline">Who We Serve</a></li>
-              <li><a href="#course" class="hover:underline">Course</a></li>
-              <li><a href="#contact" class="hover:underline">Contact</a></li>
-              <li><a href="#login" class="hover:underline">Login</a></li>
-              <li><a href="#cart" class="hover:underline">Cart</a></li>
-            </ul>
-            <button class="bg-white text-black px-4 py-2 rounded-full text-sm font-heading font-bold uppercase">
-              Book now
-            </button>
-          </div>
-        </nav>
-      </header>
-
-      <!-- Hero Content -->
+      <!-- Hero Text Content -->
       <div id="hero" class="relative z-20 flex flex-col items-center justify-center text-center h-full px-6 max-w-6xl mx-auto">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4 text-white space-x-2">
           <span class="inline-block js-hero-word invisible">Helping</span>
@@ -82,7 +81,7 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- About Section -->
     <section class="relative bg-gray-100 font-body py-16 px-6 lg:px-24 text-black">
       <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
@@ -92,10 +91,10 @@
         </div>
         <div class="space-y-6 text-lg">
           <p>
-            At the Center for Social Success (CSS), we provide a trusted, nurturing space where individuals and families can grow emotionally, strengthen their relationships, and develop lifelong skills. Our therapists specialize in creating tailored therapies that meet each client where they are—with compassion, collaboration, and clinically informed care.
+            At the Center for Social Success (CSS), we provide a trusted, nurturing space where individuals and families can grow emotionally, strengthen their relationships, and develop lifelong skills.
           </p>
           <p>
-            We know how overwhelming it can be to find the right help for your child or family. Whether you're navigating anxiety, a recent diagnosis, a major life change, or just a sense that something feels off—we’re here to listen and walk with you every step of the way.
+            Our therapists specialize in creating tailored therapies that meet each client where they are—with compassion, collaboration, and clinically informed care.
           </p>
         </div>
       </div>
@@ -112,17 +111,18 @@
       </div>
     </section>
 
-    <!-- VALUES SECTION -->
+    <!-- Values Section -->
     <section class="bg-gray-200 text-black py-16 px-6">
       <div class="max-w-7xl mx-auto text-left mb-12">
-        <h2 class="text-6xl font-heading font-bold text-primary mb-4">The CSS Approach</h2>
+        <h2 class="text-6xl font-heading font-bold text-primary mb-4">
+          The CSS Approach
+        </h2>
         <p class="text-lg font-body">
           Our work is grounded in four core values that shape every person’s experience
         </p>
       </div>
 
       <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-        <!-- Cards 1–4 -->
         <div class="group relative">
           <h3 class="text-xl font-heading font-bold mb-2">Compassionate Expertise</h3>
           <div class="relative overflow-hidden">
@@ -173,7 +173,7 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer class="bg-primary text-white py-10 px-6">
       <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         <div class="font-heading text-lg font-semibold">CSS Family Therapy</div>
@@ -195,15 +195,15 @@
         const headlineWords = document.querySelectorAll(".js-hero-word");
         const paragraph = document.querySelector("#hero p");
 
-        // Force initial visibility for GSAP control
+        // Hide initially
         gsap.set(headlineWords, { visibility: "visible" });
 
-        // Animate in
+        // Animate headline words in sequence from below
         gsap.from(headlineWords, {
           y: 40,
           opacity: 0,
           stagger: 0.3,
-          duration: 2,
+          duration: 1.2,
           ease: "power2.out"
         });
 
