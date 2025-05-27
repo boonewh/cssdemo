@@ -70,11 +70,11 @@
       <!-- Hero Content -->
       <div id="hero" class="relative z-20 flex flex-col items-center justify-center text-center h-full px-6 max-w-6xl mx-auto">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4 text-white space-x-2">
-          <span class="inline-block">Helping</span>
-          <span class="inline-block">Children,</span>
-          <span class="inline-block">Teens</span>
-          <span class="inline-block">&amp; Families</span>
-          <span class="inline-block">Thrive Through Therapy and Connection</span>
+          <span class="inline-block js-hero-word invisible">Helping</span>
+          <span class="inline-block js-hero-word invisible">Children,</span>
+          <span class="inline-block js-hero-word invisible">Teens</span>
+          <span class="inline-block js-hero-word invisible">&amp; Families</span>
+          <span class="inline-block js-hero-word invisible">Thrive Through Therapy and Connection</span>
         </h1>
         <p class="text-lg md:text-xl font-body font-light text-white opacity-0">
           Compassionate, expert-driven mental health care to support social, emotional, and behavioral growth at every life stage.
@@ -192,20 +192,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const hero = document.getElementById("hero");
-        const headlineWords = hero.querySelectorAll("h1 span");
-        const paragraph = hero.querySelector("p");
+        const headlineWords = document.querySelectorAll(".js-hero-word");
+        const paragraph = document.querySelector("#hero p");
 
-        // Animate headline words FROM below (y: 40) to their final position
+        // Force initial visibility for GSAP control
+        gsap.set(headlineWords, { visibility: "visible" });
+
+        // Animate in
         gsap.from(headlineWords, {
-          y: 80,
+          y: 40,
           opacity: 0,
           stagger: 0.3,
           duration: 2,
           ease: "power2.out"
         });
 
-        // Fade in the paragraph after headline finishes
         gsap.to(paragraph, {
           opacity: 1,
           delay: headlineWords.length * 0.3 + 0.5,
