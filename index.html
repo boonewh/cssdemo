@@ -4,55 +4,215 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Family Therapy</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      window.tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#0052CC',
+                secondary: '#73A87C',
+                charcoal: '#1A1A1A',
+              },
+              fontFamily: {
+                heading: ['Roboto', 'sans-serif'],
+                body: ['Montserrat', 'sans-serif'],
+              },
+            },
+          },
+          safelist: ['text-primary'],
+        },
+      };
+    </script>
   </head>
-  <body class="font-sans text-white">
-    <!-- Combined Section -->
+
+  <body class="font-body text-white bg-charcoal">
+    <!-- HERO SECTION -->
     <section class="relative h-screen w-full overflow-hidden">
-      <!-- Absolute Fullscreen Image -->
+      <!-- Background Image -->
       <img
         src="images/css-staff-23.jpg"
         alt="Hero"
         class="absolute top-0 left-0 w-full h-full object-cover z-0"
       />
-
       <!-- Overlay -->
       <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
 
-      <!-- Sticky Navbar (inside hero so it's over the image) -->
+      <!-- Navbar -->
       <header class="sticky top-0 z-20">
         <nav class="flex justify-between items-center px-6 lg:px-12 py-4 backdrop-blur-sm bg-white/10">
-            <!-- Logo on the left -->
-            <div class="text-lg font-semibold text-white">CSS Family Therapy</div>
-
-            <!-- Nav links + button on the right -->
-            <div class="flex items-center space-x-6">
-                <ul class="hidden md:flex space-x-6 text-white">
-                <li><a href="#about" class="hover:underline">About</a></li>
-                <li><a href="#services" class="hover:underline">Services</a></li>
-                <li><a href="#who" class="hover:underline">Who We Serve</a></li>
-                <li><a href="#course" class="hover:underline">Course</a></li>
-                <li><a href="#contact" class="hover:underline">Contact</a></li>
-                <li><a href="#login" class="hover:underline">Login</a></li>
-                <li><a href="#cart" class="hover:underline">Cart</a></li>
-                </ul>
-                <button class="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold">
-                Book now
-                </button>
-            </div>
-</nav>
+          <div class="text-lg font-heading font-semibold text-white">CSS Family Therapy</div>
+          <div class="flex items-center space-x-6">
+            <ul class="hidden md:flex space-x-6 text-white font-body">
+              <li><a href="#about" class="hover:underline">About</a></li>
+              <li><a href="#services" class="hover:underline">Services</a></li>
+              <li><a href="#who" class="hover:underline">Who We Serve</a></li>
+              <li><a href="#course" class="hover:underline">Course</a></li>
+              <li><a href="#contact" class="hover:underline">Contact</a></li>
+              <li><a href="#login" class="hover:underline">Login</a></li>
+              <li><a href="#cart" class="hover:underline">Cart</a></li>
+            </ul>
+            <button class="bg-white text-black px-4 py-2 rounded-full text-sm font-heading font-bold uppercase">
+              Book now
+            </button>
+          </div>
+        </nav>
       </header>
 
-      <!-- Hero Text Content -->
-      <div class="relative z-20 flex flex-col items-center justify-center text-center h-full px-6 max-w-6xl mx-auto">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-          Helping Children, Teens & Families Thrive Through Therapy and Connection
+      <!-- Hero Content -->
+      <div id="hero" class="relative z-20 flex flex-col items-center justify-center text-center h-full px-6 max-w-6xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4 text-white space-x-2">
+          <span class="inline-block">Helping</span>
+          <span class="inline-block">Children,</span>
+          <span class="inline-block">Teens</span>
+          <span class="inline-block">&amp; Families</span>
+          <span class="inline-block">Thrive Through Therapy and Connection</span>
         </h1>
-        <p class="text-lg md:text-xl font-light">
+        <p class="text-lg md:text-xl font-body font-light text-white opacity-0">
           Compassionate, expert-driven mental health care to support social, emotional, and behavioral growth at every life stage.
         </p>
       </div>
     </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="relative bg-gray-100 font-body py-16 px-6 lg:px-24 text-black">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-6xl font-heading font-bold text-primary leading-tight">
+            We understand<br />and we care
+          </h2>
+        </div>
+        <div class="space-y-6 text-lg">
+          <p>
+            At the Center for Social Success (CSS), we provide a trusted, nurturing space where individuals and families can grow emotionally, strengthen their relationships, and develop lifelong skills. Our therapists specialize in creating tailored therapies that meet each client where they are—with compassion, collaboration, and clinically informed care.
+          </p>
+          <p>
+            We know how overwhelming it can be to find the right help for your child or family. Whether you're navigating anxiety, a recent diagnosis, a major life change, or just a sense that something feels off—we’re here to listen and walk with you every step of the way.
+          </p>
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+        <svg
+          class="relative block w-[calc(100%+1.3px)] h-[100px] rotate-180 text-gray-200"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+        >
+          <path fill="currentColor" d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- VALUES SECTION -->
+    <section class="bg-gray-200 text-black py-16 px-6">
+      <div class="max-w-7xl mx-auto text-left mb-12">
+        <h2 class="text-6xl font-heading font-bold text-primary mb-4">The CSS Approach</h2>
+        <p class="text-lg font-body">
+          Our work is grounded in four core values that shape every person’s experience
+        </p>
+      </div>
+
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Cards 1–4 -->
+        <div class="group relative">
+          <h3 class="text-xl font-heading font-bold mb-2">Compassionate Expertise</h3>
+          <div class="relative overflow-hidden">
+            <img src="images/compassion.jpg" alt="Compassion" class="w-full rounded transition duration-300 group-hover:brightness-[.25]" />
+            <div class="absolute inset-0 flex items-center justify-center text-white text-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+              <p class="text-lg font-body">
+                Clinical expertise paired with empathy — blending evidence-based practices with a deep commitment to each individual’s emotional well-being.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative">
+          <h3 class="text-xl font-heading font-bold mb-2">Empowering Growth</h3>
+          <div class="relative overflow-hidden">
+            <img src="images/flowers.jpg" alt="Growth" class="w-full rounded transition duration-300 group-hover:brightness-[.25]" />
+            <div class="absolute inset-0 flex items-center justify-center text-white text-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+              <p class="text-lg font-body">
+                A focus on emotional resilience, self-regulation, and interpersonal development to help clients build confidence and navigate life with greater ease.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative">
+          <h3 class="text-xl font-heading font-bold mb-2">Collaborative Support</h3>
+          <div class="relative overflow-hidden">
+            <img src="images/support.jpg" alt="Support" class="w-full rounded transition duration-300 group-hover:brightness-[.25]" />
+            <div class="absolute inset-0 flex items-center justify-center text-white text-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+              <p class="text-lg font-body">
+                Therapy that involves the whole support system including families, schools, and care providers — to foster consistency, connection, and shared progress.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative">
+          <h3 class="text-xl font-heading font-bold mb-2">Relationship-Centered Care</h3>
+          <div class="relative overflow-hidden">
+            <img src="images/relationships.jpg" alt="Relationships" class="w-full rounded transition duration-300 group-hover:brightness-[.25]" />
+            <div class="absolute inset-0 flex items-center justify-center text-white text-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+              <p class="text-lg font-body">
+                An emphasis on strengthening the most important connections in life: family bonds, peer relationships, and the relationship with oneself.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white py-10 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div class="font-heading text-lg font-semibold">CSS Family Therapy</div>
+        <div>
+          <h4 class="font-semibold mb-1">Location</h4>
+          <p>4444 New Place.<br />Dallas, TX 75000</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-1">Contact</h4>
+          <p>info@cssdallas.com<br />214-555-4321</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hero = document.getElementById("hero");
+        const headlineWords = hero.querySelectorAll("h1 span");
+        const paragraph = hero.querySelector("p");
+
+        // Animate headline words FROM below (y: 40) to their final position
+        gsap.from(headlineWords, {
+          y: 80,
+          opacity: 0,
+          stagger: 0.3,
+          duration: 2,
+          ease: "power2.out"
+        });
+
+        // Fade in the paragraph after headline finishes
+        gsap.to(paragraph, {
+          opacity: 1,
+          delay: headlineWords.length * 0.3 + 0.5,
+          duration: 1.2,
+          ease: "power1.out"
+        });
+      });
+    </script>
   </body>
 </html>
-
